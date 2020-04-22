@@ -110,14 +110,14 @@ void loop() {
 }
 
 void setXY(float x, float y){
-  current_positions[0] = x;
-  current_positions[1] = y;
+  current_positions[0] = x*STEPS_PER_MM;
+  current_positions[1] = y*STEPS_PER_MM;
   steppers.moveTo(current_positions);
   steppers.runSpeedToPosition();
 }
 
 void setZ(float z){
-  current_positions[2] = z;
+  current_positions[2] = z*STEPS_PER_MM;
   steppers.moveTo(current_positions);
   steppers.runSpeedToPosition();
 }

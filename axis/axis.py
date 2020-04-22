@@ -22,13 +22,13 @@ class Axis:
         return float(self.connection.readline())
 
     def set_xy_pos(self, x, y):
-        self.connection.write("moveXY "+str(x)+" "+str(y))
+        self.connection.write(("moveXY "+str(x)+" "+str(y)).encode())
         return self.connection.readline()
 
     def set_z_pos(self, z):
-        self.connection.write("moveZ "+str(z))
+        self.connection.write(("moveZ "+str(z)).encode())
         return self.connection.readline()
 
     def get_analog_input(self):
-        self.connection.write("analogread")
+        self.connection.write("analogread".encode())
         return float(self.connection.readline())

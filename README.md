@@ -19,6 +19,15 @@ Stepper motor control using python and arduino.
     python setup.py install
     ```
 
+## Wiring
+- X axis stepper driver on pins 2,3
+- Y axis stepper driver on pins 4,5
+- X axis stepper driver on pins 6,7
+- Analog read on A0
+
+![](axiswiring.jpg)
+(Image from http://coo.lari.yamida-yoga.de/tb6600-wiring-diagram.html)
+
 ## Usage
 ```python
 import axis
@@ -28,3 +37,6 @@ a.set_xy_pos(100, 100)
 print(a.get_x_pos())
 print(a.get_analog_input())
 ```
+
+## Calibration
+- Adjust the STEPS_PER_MM parameter in the arduinoController code to calibrate the distance traveled. 
